@@ -43,7 +43,22 @@ describe('rounds', function() {
   it('should  have incorrectGuesses property that starts out as empty', function() {
     expect(round.incorrectGuesses).to.be.deep.equal([])
   })
-
+})
+  
+describe('taking turns', function() {
+  
+  let round, deck, card1, card2, card3
+  
+  beforeEach(function() {
+    card1 = createCard(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter')
+    card2 = createCard(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder')
+    card3 = createCard(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap')
+    
+    deck = createDeck([card1, card2, card3])
+    
+    round = createRound(deck);
+  })  
+  
   it('should be a function', function() {
     expect(takeTurn).to.be.a('function')
   })
