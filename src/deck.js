@@ -1,4 +1,4 @@
-function createDeck(cards) {
+const createDeck = (cards) => {
   let deck = [...cards]
   return deck
 }
